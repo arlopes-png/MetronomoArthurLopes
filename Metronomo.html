@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrônomo Mecânico Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Metrônomo Clássico</h1>
+            <p>Arraste o peso na haste ou use os botões de ajuste fino</p>
+        </header>
+
+        <!--ajuste Preciso -->
+        <div class="display-painel">
+            <div class="bpm-ajuste-linha">
+                <button id="btn-menos" class="btn-ajuste" title="Diminuir 1 BPM">-</button>
+                <div class="bpm-leitura">
+                    <span id="bpm-valor">120</span>
+                    <span class="bpm-label">BPM</span>
+                </div>
+                <button id="btn-mais" class="btn-ajuste" title="Aumentar 1 BPM">+</button>
+            </div>
+            <div id="andamento-nome" class="andamento-texto">Allegro</div>
+        </div>
+
+        <!-- Corpo Físico do Metrônomo -->
+        <div class="metronomo-corpo">
+            <!-- pirâmide -->
+            <div class="madeira-piramide">
+                <!-- Escala de referência no fundo -->
+                <div class="escala-fundo">
+                    <div class="marca" style="top: 10%;"><span>40</span></div>
+                    <div class="marca" style="top: 28%;"><span>72</span></div>
+                    <div class="marca" style="top: 46%;"><span>108</span></div>
+                    <div class="marca" style="top: 64%;"><span>144</span></div>
+                    <div class="marca" style="top: 82%;"><span>184</span></div>
+                    <div class="marca" style="top: 95%;"><span>208</span></div>
+                </div>
+            </div>
+
+            <!-- Haste e Peso livres para balançar sem cortes (IA PQ NAO TAVA CONSEGUINDO SFDDDDDDD) -->
+            <div id="pendulo" class="pendulo">
+                <div class="haste"></div>
+                <div id="peso" class="peso" title="Arraste para cima ou para baixo">
+                    <div class="peso-detalhe"></div>
+                </div>
+            </div>
+
+            <!-- eixo do pêndulo -->
+            <div class="base-frontal">
+                <div id="led-batida" class="led"></div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controles">
+            <button id="btn-toggle" class="btn-principal">Iniciar</button>
+            
+            <div class="compasso-controle">
+                <label for="compasso">Acento (Compasso):</label>
+                <select id="compasso">
+                    <option value="0">Sem acento</option>
+                    <option value="2">2/4 (Binário)</option>
+                    <option value="3">3/4 (Ternário)</option>
+                    <option value="4" selected>4/4 (Quaternário)</option>
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape-pagina">
+       <p>Arthur Lopes Pereira - ©Todos os direitos reservados
+         <br>   
+        Trabalho acadêmico sem fins lucrativos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
